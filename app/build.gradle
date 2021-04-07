@@ -3,6 +3,21 @@ plugins {
     id 'kotlin-android'
 }
 
+// apply ByteX宿主
+//apply plugin: 'bytex'
+//ByteX {
+//    enable true
+//    enableInDebug true
+//    logLevel "DEBUG"
+//}
+
+//apply plugin: 'bytex.sample'
+//bytex_sample {
+//    enable true
+//    enableInDebug true
+//    logLevel "DEBUG"
+//}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
