@@ -1,0 +1,40 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation gradleApi()
+    compileOnly "com.android.tools.build:gradle:$gradle_version"
+    implementation "com.bytedance.android.byteX:common:${bytex_version}"
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+
+            groupId GROUP_ID
+            artifactId ARTIFACT_ID
+            version VERSION
+
+            from components.java
+
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            // change to point to your repo, e.g. http://my.org/repo
+            url uri('../repo')
+        }
+    }
+}

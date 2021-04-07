@@ -1,2 +1,4 @@
+include ':plugin-sample-java'
+include ':plugin-sample-kotlin'
 include ':app'
 rootProject.name = "plugins-based-on-bytex"
